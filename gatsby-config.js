@@ -6,5 +6,9 @@
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "PingCAP",
+    year: 2019,
+  },
   plugins: [`gatsby-plugin-sass`],
 }
