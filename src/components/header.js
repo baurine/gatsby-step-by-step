@@ -3,18 +3,20 @@ import { Link } from "gatsby"
 
 import logo from "../images/pingcap-logo.png"
 
+import styles from "./header.module.scss"
+
 const Header = () => (
-  <header>
+  <header className={styles.container}>
     <Link to="/">
-      <img src={logo} alt="pingcap" />
+      <img className={styles.logo} src={logo} alt="pingcap" />
     </Link>
     <nav>
-      <ul>
+      <ul className={styles.nav_links}>
         <li>
-          <Link to="cases">cases</Link>
+          <Link to="cases">Cases</Link>
         </li>
         <li>
-          <Link to="about">about</Link>
+          <Link to="about">About</Link>
         </li>
       </ul>
     </nav>

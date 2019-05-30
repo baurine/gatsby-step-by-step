@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+
+  height: 60px;
+}
+
+.logo {
+  height: 32px;
+  margin-left: 60px;
+}
+
+.nav_links {
+  display: flex;
+
+  li {
+    margin-right: 40px;
+    font-size: 20px;
+    list-style: none;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
