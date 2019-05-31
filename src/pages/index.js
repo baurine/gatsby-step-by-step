@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 
 export default ({ data }) => {
@@ -14,7 +14,10 @@ export default ({ data }) => {
         </div>
       ))}
       {data.allMarkdownRemark.edges.map(({ node }, idx) => (
-        <div key={idx} dangerouslySetInnerHTML={{ __html: node.html }} />
+        <div key={node.fields.slug}>
+          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+        </div>
       ))}
     </Layout>
   )
@@ -37,6 +40,12 @@ export const query = graphql`
         node {
           excerpt
           html
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+          }
         }
       }
     }
