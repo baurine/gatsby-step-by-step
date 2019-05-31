@@ -10,5 +10,14 @@ module.exports = {
     title: "PingCAP",
     year: 2019,
   },
-  plugins: [`gatsby-plugin-sass`],
+  plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content`,
+        path: `${__dirname}/content`
+      }
+    },
+    `gatsby-plugin-sass`
+  ],
 }
