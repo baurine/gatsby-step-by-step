@@ -13,6 +13,9 @@ export default ({ data }) => {
           <div>path: {node.relativePath}</div>
         </div>
       ))}
+      {data.allMarkdownRemark.edges.map(({ node }, idx) => (
+        <div key={idx} dangerouslySetInnerHTML={{ __html: node.html }} />
+      ))}
     </Layout>
   )
 }
@@ -26,6 +29,14 @@ export const query = graphql`
           prettySize
           ext
           name
+        }
+      }
+    }
+    allMarkdownRemark {
+      edges {
+        node {
+          excerpt
+          html
         }
       }
     }
