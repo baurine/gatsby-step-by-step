@@ -15,9 +15,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `content`,
-        path: `${__dirname}/content`
-      }
+        path: `${__dirname}/content`,
+      },
     },
-    `gatsby-plugin-sass`
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
+    },
+    `gatsby-plugin-sass`,
   ],
 }
