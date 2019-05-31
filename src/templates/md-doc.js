@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 export default ({ data }) => {
   return (
     <Layout>
+      <h1>{data.markdownRemark.frontmatter.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
   )
