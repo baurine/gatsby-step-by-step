@@ -1,11 +1,22 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 
-export default () => {
+export default ({ data }) => {
   return (
     <Layout>
-      <h1>markdown doc template</h1>
-      <p>doc content (to be filled...)</p>
+      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`

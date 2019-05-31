@@ -39,6 +39,9 @@ exports.createPages = ({ graphql, actions }) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve("./src/templates/md-doc.js"),
+          context: {
+            slug: node.fields.slug
+          }
         })
       })
       resolve()
