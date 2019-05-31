@@ -29,6 +29,9 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+              frontmatter {
+                alias
+              }
             }
           }
         }
@@ -43,6 +46,15 @@ exports.createPages = ({ graphql, actions }) => {
             slug: node.fields.slug
           }
         })
+        if (node.frontmatter.alias) {
+          createPage({
+            path: node.frontmatter.alias,
+            component: path.resolve("./src/templates/md-doc.js"),
+            context: {
+              slug: node.fields.slug
+            }
+          })
+        }
       })
       resolve()
     })
