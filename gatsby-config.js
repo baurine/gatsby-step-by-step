@@ -20,7 +20,16 @@ module.exports = {
     },
     {
       resolve: `gatsby-transformer-remark`,
-      options: {},
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: ["md"],
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-sass`,
   ],
