@@ -4,12 +4,12 @@ const path = require("path")
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    console.log("=========================")
-    console.log(node)
+    // console.log("=========================")
+    // console.log(node)
     const parentNode = getNode(node.parent)
-    console.log(parentNode)
+    // console.log(parentNode)
     const slug = path.join("/", parentNode.relativeDirectory, parentNode.name)
-    console.log(slug)
+    // console.log(slug)
     createNodeField({
       node,
       name: "slug",
@@ -37,7 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      console.log(JSON.stringify(result, null, 2))
+      // console.log(JSON.stringify(result, null, 2))
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
           path: node.fields.slug,
