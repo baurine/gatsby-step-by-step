@@ -6,7 +6,15 @@ TiDB overview...
 
 ![](./media/tidb-architecture.png)
 
-[TiDB Markdown](./tidb.md)
+[TiDB Markdown 1](./tidb.md)
+
+[TiDB Markdown 2](tidb.md#title)
+
+[TiDB Markdown 3](./tidb.md#title)
+
+[TiDB Markdown 4](/docs/tidb)
+
+[TiDB Markdown in GitHub](https://github.com/pingcap/docs/tidb.md#title)
 
 ```javascript
 const Header = () => (
