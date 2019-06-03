@@ -2,7 +2,8 @@ const visit = require("unist-util-visit")
 
 module.exports = ({ markdownAST }, pluginOptions = {}) => {
   visit(markdownAST, "link", node => {
-    console.log(node)
+    // console.log() is very very slow!!!
+    // console.log(node.url)
     if (node.url.startsWith("http")) {
       return
     }
@@ -14,6 +15,6 @@ module.exports = ({ markdownAST }, pluginOptions = {}) => {
     } else {
       return
     }
-    console.log(node.url)
+    // console.log(node.url)
   })
 }
