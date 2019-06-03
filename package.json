@@ -10,7 +10,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "clone-docs-cn": "mkdir -p external-content; rm -rf external-content/docs-cn; git clone --depth=1 https://github.com/pingcap/docs-cn.git external-content/docs-cn",
+    "build-docs-cn": "npm run clone-docs-cn; npm run build"
   },
   "dependencies": {
     "gatsby": "^2.7.5",
