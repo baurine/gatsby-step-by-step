@@ -16,6 +16,8 @@ TiDB overview...
 
 [TiDB Markdown in GitHub](https://github.com/pingcap/docs/tidb.md#title)
 
+[Another Markdown](../another.md)
+
 ```javascript
 const Header = () => (
   <header className={styles.container}>
